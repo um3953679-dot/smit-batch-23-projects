@@ -2,111 +2,66 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
     background:#f4f4f4;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:30px auto;
-
-    display:grid;
-    grid-template-columns:250px 1fr;
-    grid-template-areas:
-    "header header"
-    "sidebar hero"
-    "sidebar products"
-    "footer footer";
-
-    gap:20px;
-}
-
-.header{
-    grid-area:header;
-    background:#2563eb;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
-
-.sidebar{
-    grid-area:sidebar;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-}
-
-.sidebar ul{
-    list-style:none;
-    margin-top:20px;
-}
-
-.sidebar li{
-    padding:10px 0;
-    border-bottom:1px solid #ddd;
-}
-
-.hero{
-    grid-area:hero;
-    background:linear-gradient(90deg,#2563eb,#60a5fa);
-    color:white;
-    padding:50px;
-    border-radius:10px;
-}
-
-.products{
-    grid-area:products;
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    height:220px;
-    border-radius:10px;
-
+.navbar{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
+    padding:15px 8%;
+    background:#0f766e;
+}
 
-    font-size:22px;
-    font-weight:bold;
+.logo h2{
+    color:#fff;
+    font-size:30px;
+}
 
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:17px;
     transition:.3s;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+.nav-links a:hover{
+    color:#facc15;
 }
 
-.footer{
-    grid-area:footer;
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:20px;
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    background:#facc15;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:white;
 }
 
 @media(max-width:768px){
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
 
-.container{
-
-grid-template-columns:1fr;
-
-grid-template-areas:
-"header"
-"hero"
-"sidebar"
-"products"
-"footer";
-
-}
-
+    .nav-links{
+        justify-content:center;
+    }
 }
